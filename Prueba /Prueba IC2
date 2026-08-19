@@ -1,3 +1,4 @@
+///Grupo 3 Linetzky, Garelik y Lopez
 #include <U8g2lib.h>
 
 // OLED SH1106 128x64 por I2C
