@@ -1,1 +1,26 @@
+//Lopez, Garelik y Linetzky- 5LB - Grupo 3
+#define MQ_PIN 33
 
+
+void setup() {
+  Serial.begin(115200);
+  analogReadResolution(12);
+}
+
+
+void loop() {
+  int smoke = analogRead(MQ_PIN);
+
+
+  int percentage = map(smoke, 0, 4095, 100, 0);
+
+
+  Serial.print("ADC: ");
+  Serial.print(smoke);
+  Serial.print("  Smoke : ");
+  Serial.print(percentage);
+  Serial.println("%");
+
+
+  delay(100);
+}  
