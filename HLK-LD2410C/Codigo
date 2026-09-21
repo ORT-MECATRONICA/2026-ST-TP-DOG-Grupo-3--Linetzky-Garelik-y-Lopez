@@ -1,0 +1,34 @@
+// Grupo 3 Joaquin Garelik, Manuel Linetzky y Alexander Lopez
+
+
+#define PIN_PRESENCIA 18
+
+
+void setup() {
+  Serial.begin(115200);
+
+
+  pinMode(PIN_PRESENCIA, INPUT);
+
+
+  Serial.println("Iniciando HLK-LD2410C...");
+}
+
+
+void loop() {
+
+
+  int estado = digitalRead(PIN_PRESENCIA);
+
+
+  if (estado == HIGH) {
+    Serial.println("PERSONA DETECTADA");
+  }
+  else {
+    Serial.println("NO HAY PERSONA");
+  }
+
+
+  delay(500);
+}
+
