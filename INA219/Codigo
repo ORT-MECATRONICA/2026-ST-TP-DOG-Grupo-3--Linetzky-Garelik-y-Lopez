@@ -1,0 +1,49 @@
+// Linetzky, Garelik y Lopez - 5LB - Grupo 3
+
+
+#include <Wire.h>
+#include <Adafruit_INA219.h>
+
+
+#define PIN_SDA 21
+#define PIN_SCL 22
+
+
+Adafruit_INA219 ina219;
+
+
+float current = 0;
+
+
+void setup() {
+
+
+  Serial.begin(115200);
+
+
+  Wire.begin(PIN_SDA, PIN_SCL);
+
+
+  if (!ina219.begin()) {
+    Serial.println("INA219 not found");
+  }
+
+
+}
+
+
+void loop() {
+
+
+  current = ina219.getCurrent_mA();
+
+
+  Serial.print("Current: ");
+  Serial.print(current);
+  Serial.println(" mA");
+
+
+  delay(100);
+
+
+}
