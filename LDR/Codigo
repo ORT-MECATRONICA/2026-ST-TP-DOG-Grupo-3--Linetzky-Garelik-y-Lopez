@@ -1,0 +1,21 @@
+// Grupo 3 Joaquin Garelik, Manuel Linetzky y Alexander Lopez
+
+#define LDR_PIN 34
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(LDR_PIN, INPUT);
+
+  Serial.println("Iniciando prueba del LDR...");
+}
+
+void loop() {
+
+  int valorLDR = analogRead(LDR_PIN);
+
+  Serial.print("Valor LDR: ");
+  Serial.println(valorLDR);
+
+  delay(500);
+}
